@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Encrypt & Decrypt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Encrypt & Decrypt</h1>
+    <div class="input-group">
+      <label for="fileInput">Choose File</label>
+      <input type="file" id="fileInput" accept=".docx,.xlsx,.txt" />
+    </div>
+    <div class="input-group">
+      <label for="textInput">Text Input</label>
+      <textarea id="textInput" placeholder="Type or paste text here..."></textarea>
+    </div>
+    <div class="input-group">
+      <label for="keyInput">Encryption Key</label>
+      <input type="text" id="keyInput" placeholder="16-character key" maxlength="16" />
+    </div>
+    <div class="button-section">
+      <div class="button-group text-group">
+        <button onclick="encryptText()">Encrypt Text</button>
+        <button class="decrypt-button" onclick="decryptText()">Decrypt Text</button>
+      </div>
+      <div class="button-group file-group">
+        <button class="encrypt-button" onclick="encryptFile()">Encrypt File</button>
+        <button class="decrypt-button" onclick="decryptFile()">Decrypt File</button>
+      </div>
+      <button class="history-btn" onclick="showHistory()">View History</button>
+    </div>
+    <div id="status"></div>
+  </div>
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Encryption/Decryption History</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
